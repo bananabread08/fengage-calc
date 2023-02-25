@@ -1,7 +1,7 @@
-import { CharData } from '@/data';
+import { CharData, ClassData } from '@/data';
 export function getSelectedClass(
   currentChar: CharData,
-  currentClass: CharData
+  currentClass: ClassData
 ) {
   return currentChar.name === 'Jean'
     ? {
@@ -11,7 +11,10 @@ export function getSelectedClass(
     : currentClass;
 }
 
-export function getFinalGrowth(currentChar: CharData, selectedClass: CharData) {
+export function getFinalGrowth(
+  currentChar: CharData,
+  selectedClass: ClassData
+) {
   return currentChar.growth.map((v, i) => v + selectedClass.growth[i]);
 }
 
@@ -21,6 +24,6 @@ export function getStarsphere(finalGrowth: number[]) {
   });
 }
 
-export function getMaxStats(currentChar: CharData, selectedClass: CharData) {
+export function getMaxStats(currentChar: CharData, selectedClass: ClassData) {
   return currentChar.mods.map((v, i) => v + selectedClass.mods[i]);
 }

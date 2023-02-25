@@ -1,12 +1,21 @@
 import { StaticImageData } from 'next/image';
 import dragonChild from '../public/dragon-child.webp';
+import archer from '../public/archer.webp';
+import sword from '../public/weapon-sword.png';
 type Growth = number;
 type Stats = Growth[];
 export type CharData = {
   name: string;
   growth: Stats;
   mods: Stats;
+};
+
+export type ClassData = {
+  name: string;
+  growth: Stats;
+  mods: Stats;
   img?: string | StaticImageData;
+  weapons?: StaticImageData[];
 };
 
 export const characterData: CharData[] = [
@@ -192,11 +201,12 @@ export const characterData: CharData[] = [
   },
 ];
 
-export const classData: CharData[] = [
+export const classData: ClassData[] = [
   {
     name: 'Archer',
     growth: [10, 15, 0, 25, 10, 5, 0, 5, 0, 70],
     mods: [68, 38, 20, 45, 32, 23, 24, 28, 14],
+    img: archer,
   },
   {
     name: 'Armor',
@@ -248,6 +258,7 @@ export const classData: CharData[] = [
     growth: [10, 10, 0, 10, 15, 10, 10, 5, 5, 75],
     mods: [68, 41, 25, 36, 43, 35, 25, 35, 13],
     img: dragonChild,
+    weapons: [sword],
   },
   {
     name: 'Fell Child',

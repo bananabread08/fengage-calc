@@ -51,9 +51,12 @@ export default function Home() {
       <Image
         src={selectedClass?.img?.src}
         alt={selectedClass.name}
-        width={selectedClass?.img?.width / 2}
-        height={selectedClass?.img?.height / 2}
+        width={75}
+        height={75}
       />
+      {selectedClass?.weapons?.map((weap) => {
+        return <Image src={weap} alt="weapons" />;
+      })}
     </div>
   );
 }
