@@ -1,9 +1,12 @@
+import { StaticImageData } from 'next/image';
+import dragonChild from '../public/dragon-child.webp';
 type Growth = number;
 type Stats = Growth[];
 export type CharData = {
   name: string;
   growth: Stats;
   mods: Stats;
+  img?: string | StaticImageData;
 };
 
 export const characterData: CharData[] = [
@@ -244,6 +247,7 @@ export const classData: CharData[] = [
     name: 'Dragon Child',
     growth: [10, 10, 0, 10, 15, 10, 10, 5, 5, 75],
     mods: [68, 41, 25, 36, 43, 35, 25, 35, 13],
+    img: dragonChild,
   },
   {
     name: 'Fell Child',

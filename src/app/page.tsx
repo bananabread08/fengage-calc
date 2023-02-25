@@ -9,6 +9,7 @@ import {
   getSelectedClass,
   getStarsphere,
 } from '@/utils';
+import Image from 'next/image';
 
 export default function Home() {
   const [currentChar, setCurrentChar] = useState(characterData[1]);
@@ -46,6 +47,12 @@ export default function Home() {
           { name: 'Stat Caps', growth: maxStats, mods: currentChar.mods },
         ]}
         title="Computed Growth"
+      />
+      <Image
+        src={selectedClass?.img?.src}
+        alt={selectedClass.name}
+        width={selectedClass?.img?.width / 2}
+        height={selectedClass?.img?.height / 2}
       />
     </div>
   );
